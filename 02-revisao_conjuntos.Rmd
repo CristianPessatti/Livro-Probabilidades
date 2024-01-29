@@ -1,0 +1,144 @@
+---
+header-includes:
+- \usepackage{pxfonts}
+- \usepackage{amsmath}
+---
+
+# REVISÃO - TEORIA DOS CONJUNTOS
+
+## Conjuntos
+
+Chamaremos de conjunto (usualmente representado por alguma letra maiúscula) uma coleção de elementos de algum espaço maior chamado universo (representado aqui pela letra maiúscula U)
+
+Exemplo:
+
+$$
+\begin{align*}
+&U = \mathbb{R}\\
+&A = \{0,2,4,6,8,10\} = \{x = 2k\;|\;k=0,1,2,3,4,5\}\\
+&B = \{...,-3,-2,-1,0,1,2,3,...\} = Z\\
+&C = \{x \in U\;|\;-1<x \le 2\} = (-1,2\rbrack
+\end{align*}
+$$
+
+## Intervalos
+
+$$
+\begin{align*}
+&\lbrack a,b\rbrack = \{x\in R\;|\; a\le x\le b,\; a<b\}\\
+&(a,b) = \{x \in R\;|\;a<x<b,\;a<b\}\\
+\end{align*}
+$$
+Se $a = b$, então temos um intervalo degenerado, também chamado de singleton
+$\;\lbrack a,a\rbrack = \{a\}$
+
+## Operações com Conjuntos
+
+### União (ou Conjunção): 
+$A \cup B = \{x \in U\;|\;x\in A\vee x\in B\}$
+
+Exemplo:
+$$
+\begin{align*}
+&A=\{2,4,6,8,10\}\\
+&B=\{0,1,2,3,4\}\\
+&A\cup B=\{0,1,2,3,4,6,8,10\}
+\end{align*}
+$$
+
+### Interseção (ou Disjunção): 
+$A\cap B = \{x\in U\;|\;x\in A\wedge x\in B\}$
+
+Exemplo:
+$$
+\begin{align*}
+&A=\{2,4,6,8,10\}\\
+&B=\{0,1,2,3,4\}\\
+&A\cap B=\{2,4\}
+\end{align*}
+$$
+
+### Complementar (ou Negação):
+$A^{c} = \{x\in U\;|\;x\notin A\}$
+
+Exemplo:
+$$
+\begin{align*}
+&U=\{1,2,3,4,5\}\\
+&A=\{3,4\}\\
+&A^{c}=\{1,2,5\}
+\end{align*}
+$$
+
+### Leis de Morgan:
+
+Sejam A e B conjuntos em um universo, então vale que:
+
+$$
+\begin{align*}
+&I) (A\cup B)^{c} = A^{c}\cap B^{c}\\
+&II) (A\cap B)^{c} = A^{c}\cup B^{c}
+\end{align*}
+$$
+
+Generalizando:
+
+Sejam $A_1,A_2,...,A_n\;(n\in N)$ conjuntos que pertencem a um mesmo universo, então vale que:
+
+$$
+\begin{align*}
+&I)\;(\overset{n}{\underset{i=1}{\cup}} A_i)^{c}=
+\overset{n}{\underset{i=1}{\cap}} A_i^c
+\quad \text{ou}\quad(A_1\cup A_2\;...\;\cup\;A_n)^{c}=(A_1^{c}\cap A_2^{c}\;...\;\cap\;A_n^c)\\
+
+&II)\;(\overset{n}{\underset{i=1}{\cap}} A_i)^{c}=
+\overset{n}{\underset{i=1}{\cup}} A_i^{c}
+\quad \text{ou}\quad(A_1\cap A_2\;...\;\cap\;A_n)^{c}=(A_1^{c}\cup A_2^{c}\;...\;\cup \;A_n^c)\\
+\end{align*}
+$$
+
+obs: também funciona para infinitos conjuntos.
+
+Demonstração: (Magalhães, pág.3)
+
+Queremos demonstrar que $(\overset{n}{\underset{i=1}{\cup}} A_i)^{c}=\overset{n}{\underset{i=1}{\cap}} A_i^c$. Quando lidamos com igualdade entre conjuntos, mostraremos que cada um dos conjuntos está contido no outro, portanto precisamos verificar duas condições:
+
+$(\overset{n}{\underset{i=1}{\cup}} A_i)^{c}\subset\overset{n}{\underset{i=1}{\cap}} A_i^c\quad$e$\quad(\overset{n}{\underset{i=1}{\cup}} A_i)^{c}\supset\overset{n}{\underset{i=1}{\cap}} A_i^c$
+
+Seja $\omega$ um elemento qualquer pertencente ao universo, então supomos que $\omega\in(\overset{n}{\underset{i=1}{\cup}} A_i)^{c}$, portanto $\omega\notin(\overset{n}{\underset{i=1}{\cup}} A_i)$, o que também leva a conclusão de que $\omega\notin A_i$ para todo $i$. Logo $\omega\in A_i^{c}$ para todo $i$ e, portanto $\omega\in\overset{n}{\underset{i=1}{\cap}} A_i^c$
+
+De forma análoga, podemos facilmente verificar a segunda condição e, portanto, demonstramos a primeira lei de Morgan. A demonstração da segunda lei pode ser feita da mesma forma.
+
+## Exercícios Resolvidos
+
+**(Magalhães, seção 1.2) 1.** Sendo A, B e C subconjuntos quaisquer, expresse em notação matemática os conjuntos cujos elementos:
+
+  **a.** Estão em A e B, mas não em C.
+  
+  **b.** Não estão em nenhum deles.
+  
+  **c.** Estão, no máximo, em dois deles.
+  
+  **d.** Estão em A, mas no máximo em um dos outros.
+  
+  **e.** Estão na intersecção dos três conjuntos e no complementar de A.
+  
+**Soluções:**
+
+**a.** não estar em $C$ significa estar no complementar de $C$, portanto podemos reescrever a questão da seguinte forma: "Estão em $A$ e $B$ e no complementar de $C$". Quando dizemos que um elemento está em um conjunto **E** em outro, estamos falando de uma interseção, portanto a solução é:
+
+$A\cap B\cap C^{c}$
+
+**b.** não estar em nenhum deles é a negação de estar em todos eles. Logo a solução é a seguinte:
+
+$(A\cup B\cup C)^{c}$ ou, utilizando a primeira lei de Morgan: $A^{c}\cap B^{c}\cap C^{c}$
+
+**c.** o elemento não pode estar nos três conjuntos, o que é a negação de estar nos três conjuntos:
+
+$(A\cap B\cap C)^{c}$
+
+**d.** isso significa estar em $A$ e não estar na interseção dos outros dois conjuntos:
+
+$A\cap(B\cap C)^c$
+
+**e.** para estar nos três conjuntos precisa também estar em $A$, o que torna a interseção com $A^c$ um conjunto vazio $(\phi)$
