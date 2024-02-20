@@ -1,3 +1,17 @@
 # EXPERIMENTOS E EVENTOS PROBABILÍSTICOS
 
-aqui a esperança morre
+## Experimento Aleatório
+
+Iremos denominar pela letra grega $\varepsilon$ qualquer experimento aleatório realizado sob condições fixas. Vamos também chamar de **espaço amostral** ($\Omega$) o conjunto que contém todos os resultados possíveis de $\varepsilon$.
+
+Aqui, "resultado possível" significa um resultado elementar e indivisível do experimento $\varepsilon$.
+
+Exemplos:
+
+**(i)** seja $\varepsilon_1$: lançar um dado honesto e observar o resultado (face voltada para cima)
+
+$$
+\begin{align*}
+&\Omega_1=\{1,2,3,4,5,6\} = 
+\end{align*}
+$$

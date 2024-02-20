@@ -1,6 +1,6 @@
 --- 
 title: "Teoria da Probabilidade"
-author: "Bruno Wravzenczak - Cristian Pessatti dos Anjos"
+author: "Bruno Wavrzenczak - Cristian Pessatti dos Anjos - Caio Gomes Alves - Anderson Amorim"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::html_book
