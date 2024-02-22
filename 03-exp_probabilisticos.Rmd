@@ -12,6 +12,47 @@ Exemplos:
 
 $$
 \begin{align*}
-&\Omega_1=\{1,2,3,4,5,6\} = 
+&\Omega_1=\{1,2,3,4,5,6\}\\
 \end{align*}
 $$
+**(ii)** seja $\varepsilon_2$: medir a tensão de uma rede de alta tensão a cada minuto por uma hora.
+
+$$
+\begin{align*}
+&\Omega_2=[0,+\infty)\\
+\end{align*}
+$$
+**(iii)** seja $\varepsilon_3$: escolher um ponto do círculo unitário.
+
+$$
+\begin{align*}
+&\Omega_3=\{(x,y)\in\mathbb{R}\;|\;x^2+y^2\le1\}\\
+\end{align*}
+$$
+
+## Eventos
+
+Eventos nada mais são do que conjuntos contendo elementos do espaço amostral que satisfazem dada condição. Em outras palavras, um evento é um subconjunto do espaço amostral.
+
+Exemplo:
+
+Para $\varepsilon_1$, podemos ter, por exemplo, os seguintes eventos:
+
+$$
+\begin{align*}
+&A=\text{"oberva-se um número par"} = \{2,4,6\}\\
+&B=\text{"oberva-se o número 2"} = \{2\}\\
+&C=\text{"oberva-se um número maior ou igual a 4"} = \{4,5,6\}\\
+&C=\text{"oberva-se um ímpar"} = \{1,3,5\}\\
+\end{align*}
+$$
+
+Vamos denominar o conjunto $\phi$ a um evento impossível, e $\Omega$ a um evento certo.
+
+Exemplo:
+
+Para $\varepsilon_1$:
+
+$A\cap D = \phi\rightarrow$ evento impossível.
+
+$A\cup D = \Omega\rightarrow$ evento certo.
