@@ -56,3 +56,37 @@ Para $\varepsilon_1$:
 $A\cap D = \phi\rightarrow$ evento impossível.
 
 $A\cup D = \Omega\rightarrow$ evento certo.
+
+**DEFINIÇÃO: ** seja $\Omega$ o espaço amostral para o experimento $\varepsilon$, todo subconjunto $A\subset\Omega$ será chamado evento, como já mencionado, $\phi$ é o evento impossível e $\Omega$ é o evento certo. Se $\omega\in\Omega$, o evento $\{\omega\}$ é dito **elementar**.
+
+## $\sigma$-álgebra
+
+Para conseguirmos definir uma probabilidade precisaremos de uma classe especial de eventos chamada $\sigma$-álgebra, que representaremos pelo símbolo $\mathbb{A}$.
+
+**DEFINIÇÃO: **seja $\mathbb{A}$ uma família de subconjuntos de $\Omega$ tal que:
+
+**(i)**: $\Omega\in\mathbb{A}$.
+
+**(ii)**: Se $A\in\mathbb{A}$, então $A^c\in\mathbb{A}$.
+
+**(iii)**: Se $A_1,A_2,...\;\in\mathbb{A}$, então $\overset{\infty}{\underset{i=1}{\cup}}A_i\in\mathbb{A}$.
+
+Nesse caso diremos que $\mathbb{A}$ é uma **$\sigma$-álgebra** sobre $\Omega$.
+
+obs: Baseado em (i) e (ii), também podemos afirmar que $\phi\in\mathbb{A}$, já que $\phi$ é o complementar de $\Omega$.
+
+Exemplos:
+
+Para $\varepsilon_1$, $\Omega=\{1,2,3,4,5,6\}$.
+
+Seja $\mathbb{A}_1=\{\{1\},\{1,2\},\{4,5,6\},\Omega,\phi\}$.
+
+A condição (i) está satisfeita pois $\Omega\in\mathbb{A}_1$
+
+A condição (ii) não está satisfeita pois os complementares de vários conjuntos não estão em $\mathbb{A}$
+
+A condição (iii) não está satisfeita porque nem toda união de conjuntos dentro de $\mathbb{A}$ está dentro de $\mathbb{A}$. 
+
+Agora, seja $\mathbb{A}_2=\{\{1,2\},\{3,4,5,6\},\Omega,\phi\}$
+
+Em $\mathbb{A}_2$ podemos facilmente verificar que as três condições foram satisfeitas.

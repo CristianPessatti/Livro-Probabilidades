@@ -93,13 +93,10 @@ $$
 &P_4:\;\text{Se } A \subset B \rightarrow P(A)\le P(B) \\
 &P_5:\;P(\overset{n}{\underset{i=1}{\cup}}A_i)\le \overset{n}{\underset{i=1}{\Sigma}}P(A_i) \\
 &P_6:\;P(\overset{\infty}{\underset{i=1}{\cup}}A_i)\le \overset{\infty}{\underset{i=1}{\Sigma}}P(A_i) \\
-&P_7:\;\text{(Continuidade de probabilidade) Se existe uma} \\
-&\text{sequência }A_n\text{ tal que }A_n \uparrow A \text{ então }P(A_n) \uparrow P(A). \\
-&\text{Analogamente, se }A_n \downarrow A \text{ entâo } P(A_n) \downarrow P(A) \\
-\\
+&P_7:\;\text{(Continuidade de probabilidade) Se existe uma}\text{sequência }A_n\text{ tal que }A_n \uparrow A \text{ então }\\
+&P(A_n) \uparrow P(A).\text{Analogamente, se }A_n \downarrow A \text{ entâo } P(A_n) \downarrow P(A)\\ \\
 &P_8:\;P(A\cup B) = P(A) + P(B) - P(A\cap B). \\
-&P(A\cup B\cup C) = P(A) + P(B) + P(C) - P(A\cap B) \\
-&- P(A\cap C) - P(B\cap C) + P(A\cap B\cap C)
+&P(A\cup B\cup C) = P(A) + P(B) + P(C) - P(A\cap B) - P(A\cap C) - P(B\cap C) + P(A\cap B\cap C)
 \end{align*}
 $$
 
