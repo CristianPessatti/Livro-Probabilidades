@@ -2,11 +2,11 @@
 
 ## Definição de uma Probabilidade
 
-Existem varias formas de definir uma medida de probabilidade
+Existem varias formas de definir uma medida de probabilidade.
 
 ### Definição Clássica de Probabilidade
 
-Suponha que $\Omega$ é finito e os pontos amostrais são equiprováveis
+Suponha que $\Omega$ é finito e os pontos amostrais são equiprováveis.
 Então define-se:
 $$
 \begin{align*}
@@ -25,7 +25,7 @@ $$
 
 ### Definição Geométrica de Probabilidade
 
-Seja $\varepsilon_2$: escolher aleatoriamente um ponto do intervalo (0,1)
+Seja $\varepsilon_2$: escolher aleatoriamente um ponto do intervalo (0,1).
 
 $$
 \begin{align*}
@@ -34,7 +34,7 @@ $$
 \end{align*}
 $$
 
-$\varepsilon_3$ escolher um ponto no círculo unitário
+$\varepsilon_3$ escolher um ponto no círculo unitário.
 
 $$
 \begin{align*}
@@ -45,11 +45,11 @@ $$
 
 Em geral $P(A) = \frac{volume(A)}{volume(\Omega)}$
 
-obs: Quando o $\Omega$ é contínuo, a probabilidade de qualquer ponto é 0
+obs: Quando o $\Omega$ é contínuo, a probabilidade de qualquer ponto é 0.
 
 ### Definição Frequentista de Probabilidade
 
-$\varepsilon$: Lançar uma moeda, não necessariamente honesta e registramos a ocorrência de cara
+$\varepsilon$: Lançar uma moeda, não necessariamente honesta e registramos a ocorrência de cara.
 
 $$
 \begin{align*}
