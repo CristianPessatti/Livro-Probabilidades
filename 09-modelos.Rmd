@@ -1,3 +1,65 @@
 # MODELOS DE PROBABILIDADE
 
-probprobporbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbs
+Como visto no capítulo 6, descreve-se uma variável aleatória pela sua Função de Distribuição ou pela sua Função de Densidade/Probabilidade.
+
+Aqui, estudaremos alguns tipos de variáveis aleatórias conhecidas e suas aplicações.
+
+## Modelos Discretos
+
+### Modelo Uniforme Discreto
+
+Esse modelo é utilizado quando temos um número finito de possibilidades, no qual todas elas são equiprováveis.
+
+Seja X uma variável aletória que segue o modelo uniforme discreto, então escreveremos: $X\sim U_d(A)$, onde $A$ é o conjunto de valores possíveis para a variável: $A=\{x_1,x_2,\;...\;,x_n\}$.
+
+Função de Probabilidade: $p(x_i)=\frac{1}{n}\;,\;i=1,2,...,n$
+
+Exemplo: Vamos lançar um dado honesto e a variável aletória X será a face observada. É fácil observar que $X\sim U_d(\{1,2,3,4,5,6\})$:
+
+$p(x_i)=\frac{1}{6}$
+
+### Modelo de Bernoulli
+
+Esse modelo é utilizado quando temos apenas duas opções, que chamaremos de fracasso e sucesso, ou 0 e 1.
+
+Notação: $X\sim Bernoulli(p)$ onde $p$ é a probabilidade de sucesso.
+
+Função de Probabilidade: 
+
+$p(1)=P(X=1)=p$
+
+$p(0)=P(X=0)=1-p$
+
+Exemplo: Lançar uma moeda equilibrada e observar o lado virado para cima.
+
+$$
+\begin{align*}
+&X =
+  \begin{cases}
+    1 & \text{, se cara}\\
+    0 & \text{, se coroa}
+  \end{cases}
+\end{align*}
+$$
+
+Como a probabilidade de sair cara é $\frac{1}{2}$, então $X\sim Bernoulli(\frac{1}{2})$.
+
+### Modelo Binomial
+
+Suponha que vamos realizar $n$ ensaios de Bernoulli independentes e de probabilidade $p$ e X será a quantidade de sucessos obtidas nos $n$ ensaios. Então diremos que X segue uma Binomial de parâmetros $n$ e $p$: $X\sim Bin(n,p)$
+
+Função de Probabilidade: $p(x)={n\choose x}\cdot p^x\cdot(1-p)^{n-x}$
+
+Exemplo: Suponha que vamos lançar 100 moedas equilibradas e X será a quantidade de caras observadas. $X\sim Bin(100, \frac{1}{2})$
+
+Qual a probabilidade de sair exatamente 60 caras?
+
+$$
+\begin{align*}
+p(60)={100\choose 60}\cdot\Big(\frac{1}{2}\Big)^{60}\cdot\Big(\frac{1}{2}\Big)^{40} =
+\end{align*}
+$$
+
+### Modelo Geométrico
+
+Suponha que vamos realizar uma sequência de ensaios de Bernoulli até acontecer o primeiro sucesso, e seja X a quantidade de fracassos antes do primeiro sucesso. Então X segue uma geométrica de parâmetro $p$, onde $p$ é a probabilidade de sucesso: $X\sim Geo(p)$
