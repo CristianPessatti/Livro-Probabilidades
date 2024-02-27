@@ -1,3 +1,7 @@
 # VARIÁVEIS ALEATÓRIAS
 
-blalblbalblablal PROOOOOB
+Quando realizamos um experimento aleatório existem algumas características numéricas que são registradas.
+
+Por exemplo: número de caras em $n$ lançamentos de uma moeda, tempo de vida de um componente, salário, idade, etc. em um questionário sócio econômico.
+
+Vamos dizer, informalmente, que uma variável aleatória é uma característica numérica de um experimento aleatório

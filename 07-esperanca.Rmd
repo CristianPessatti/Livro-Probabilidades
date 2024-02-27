@@ -1,3 +1,108 @@
 # ESPERANÇA E VARIÂNCIA
 
-OIASDVAHPVIUSDVADNFIPABDFI
+## Definição de Esperança
+
+### Variável Discreta
+
+Seja $X$ uma variável aleatória discreta em $\{x_1,x_2,...\}$ com f.p $p_x(x)$.
+Define-se a esperança (ou valor esperado ou média) de $X$ como:
+
+$$
+\begin{align*}
+&E(x) = \underset{i}{\sum}x_i\cdot p_x(x_i) = \underset{i}{\sum}x_i\cdot P(X=x_i)
+\end{align*}
+$$
+
+Exemplo: Seja $X$ dado por: $P(X= -2)=0,2\;,\;P(X=-1)=0,3\;,\;P(X=0)=0,3\text{ e } P(X=2)=0,2$.
+<br>Vamos imaginar que temos uma barra sem peso que tem massas distribuidas nos pontos $-2,-1,0,2$.
+<br>O centro de gravidade da barra pode ser calculado como:
+
+$$
+\begin{align*}
+&G=\overset{4}{\underset{i=1}{\sum}}x_i p_i =(-2)(0,2)+(-1)(0,3)+(0)(0,3)+(2)(0,2) = -0,3
+\end{align*}
+$$
+
+### Variável Contínua
+
+Definição: Seja $X$ uma v.a contínua com densidade f.
+<br>Defini-se a esperança de $X$ como:
+$$
+\begin{align*}
+&E(X)=\overset{+\infty}{\underset{-\infty}{\int}}xf(x)dx
+\end{align*}
+$$
+
+
+
+
+
+Exemplo: Seja $X$ com F.D:
+
+$$
+\begin{align*}
+&F(x)=
+\left\{
+\begin{array}{ll}
+0,&x<0\\
+x,&0\le x\le 1\\
+1,&x>1
+\end{array}
+\right.
+\\\\
+&f(x)=
+\left\{
+\begin{array}{ll}
+1,&0\le x\le 1\\
+0,& c.c
+\end{array}
+\right.
+\\\\
+&E(X)= \overset{+\infty}{\underset{-\infty}{\int}}xf(x)dx=\overset{0}{\underset{-\infty}{\int}}x0dx\;+\;
+\overset{1}{\underset{0}{\int}}x1dx\;+\;\overset{+\infty}{\underset{1}{\int}}x0dx\;\\
+&=\overset{1}{\underset{0}{\int}}xdx=\frac{x²}{2}\Bigg|_{0}^{1}=\frac{1}{2}
+\end{align*}
+$$
+
+## Propriedades de Esperança
+
+$$
+\begin{align*}
+&E_1:\;\text{Se }X=c\text{, então }E(X)=c\\
+&E_2:\;\text{Se }X\le Y\text{, então }E(X)\le E(Y)\\
+&E_3:\;E(aX+b)=aE(X)+b,\;b\;\epsilon\;\mathbb{R}\\
+&\qquad\;\text{e também: }E(aX+bY)=aE(X)+bE(Y)\\
+&E_4:\;\text{Desigualdade de Jensen: Seja }\Large\varphi\normalsize\text{ uma função convexa,}\\
+&\qquad\;\text{se a v.a é integravel }E(X)<\infty\text{, então:}\\
+&\qquad\;E[\Large\varphi\normalsize(x)]\ge\Large\varphi\normalsize(E(X))
+\end{align*}
+$$
+
+Um resultado importante:
+
+$$
+\begin{align*}
+&\text{A função }\Large\varphi\normalsize(x) = x² \text{ é convexa, então pela }E_4:\\
+&E[X²]\ge(E[X])²\\
+&\text{Note que: }E[X²]-(E[X])²\ge0\text{. Essa diferença será importante para a próxima definição}
+\end{align*}
+$$
+
+### Definição de Variância
+
+Define-se a variância de uma v.a $X$ como $Var[X]=E[X²]-(E[X])²$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
