@@ -1,3 +1,190 @@
 # FUNÇÃO GERADORA DE MOMENTOS E FUNÇÃO CARACTERÍSTICA
 
-oadusvovoo
+## Definição de Função Geradora de Momentos
+
+Definição: Seja $X$ uma v.a integrável. Define-se a Função Geradoras de momentos de $X$ (FGM) como:
+
+$$
+\begin{align*}
+&M_x(t) = E(e^{tx}) =
+\left\{
+\begin{array}{ll}
+\underset{x}{\sum}e^{tx}P(X=x),&X\text{ discreto}\\
+\overset{+\infty}{\underset{-\infty}{\int}}e^{tx}f(x)dx,&X\text{ contínua}
+\end{array}
+\right.\\
+&\text{sendo t um parâmetro real}
+\end{align*}
+$$
+
+Exemplo Discreto: Seja $X$ tal que $P(X=-1)=P(X=1)=\frac{1}{2}$
+
+$$
+\begin{align*}
+&M_x(t) = \underset{x\epsilon\{-1,1\}}{\sum}e^{tx}P(X=x)=e^{-t}P(X=-1)+e^{t}P(X=1)=\frac{e^{-t}+e^{t}}{2}
+\end{align*}
+$$
+
+Exemplo Contínuo: Seja $X$ uma v.a com densidade $f(x)=e^{-x},\;x\ge0$
+
+$$
+\begin{align*}
+&M_x(t)=\overset{+\infty}{\underset{-\infty}{\int}}e^{tx}f(x)dx=\overset{+\infty}{\underset{0}{\int}}e^{tx}e^{-x}dx\\
+&\qquad\;\;=\overset{+\infty}{\underset{0}{\int}}e^{-(1-t)}dx=-\frac{1}{(1-t)}e^{-(1-t)x}\Bigg|_{0}^{+\infty}\frac{1}{1-t}(1-0)\\
+&\qquad\;\;=\frac{1}{1-t},\;t<1
+\end{align*}
+$$
+
+Notar que para FGM de $X$ existir foi necessario restringir os valores de t.
+<br>Uma dificuldade de FGM é que nem sempre ela existe, mesmo numa vizinhaça de zero
+
+Teorema: Suponha que a FGM de $X$ exista para $(t)<t_0.(t_0>0)$
+<br>Então o k-ésimo momento de $X$ existe e pode set encontrado como:
+
+$$
+\begin{align*}
+&E(X^k)=M^{(k)}_X(t)\Bigg|_{t=0} = \frac{\delta^k}{\delta t^k}M_X(t)\Bigg|_{t=0}\quad,\;k=1,2,3,...
+\end{align*}
+$$
+
+Esse resultado justifica o nome da FGM, pois de alguma forma ela gera todos os momentos de $X$
+
+Exemplo:
+
+$$
+\begin{align*}
+&M_x(t)=\frac{e^{-t}+e^t}{2}\\
+&M'_X(t)=\frac{1}{2}(-e^{-t}+e^t) \rightarrow M'_X(0)=\frac{1}{2}(-e^{-0}+e⁰)=0\\
+&\text{Logo }E(X)=M'_x(0)=0
+\end{align*}
+$$
+
+Também:
+
+$$
+\begin{align*}
+&M''_X(t)=\frac{1}{2}(e^{-t}+e^t) \rightarrow M''_X(0)=\frac{1}{2}(e^{-0}+e^{0})=1=E(X²)\\
+&Var[X]=E[X²]-(E[X])²=1-0=1
+\end{align*}
+$$
+
+Teorema: Se duas v.a's têm FGM que existam, e são iguais, entao elas têm a mesma distribuição.
+
+Teorema: Sejam $X$ e $Y$ v.a's independentes. Então:
+
+$$
+\begin{align*}
+&M_{X+Y}(t)=M_X(T)M_Y(t)\\
+&\text{desde que todas as FGM envolvidas existam}
+\end{align*}
+$$
+
+obs:
+
+$$
+\begin{align*}
+&1)\text{ Esse resultado serve para encontrar a distribuição da soma de duas v.a's independentes}\\
+&2)\text{ Esse resultado pode ser estendido para n v.a's independentes: se }X_1,X_2,...,X_n\text{ são independentes, então:}\\
+&\quad M_{X_1+X_2+...+X_n}(t)=\prod_{i=1}^nM_{X_i}(t)
+\end{align*}
+$$
+
+Teorema: Seja $M_X(t)$ a FGM de $X$. Defina $Y=ax+b$. Então:
+
+$$
+\begin{align*}
+&M_Y(t)=M_{ax+b}(t)=e^{bt}M_X(at),\quad a,b\in\mathbb{R}
+\end{align*}
+$$
+
+Prova: 
+
+$$
+\begin{align*}
+&M_Y(t)=E\left[e^{tY}\right]=E[e^{t(aX+b)}]=E[e^{taX+bt}]=E[e^{bt}e^{atX}]\\
+&=e^{bt}E[e^{atX}]=e^{bt}M_X(at)
+\end{align*}
+$$
+
+## Definição de Função Característica
+
+Dadas duas v.a's reais $X$ e $Y$ no mesmo experimento podemos definir uma v.a complexa como:
+
+$$
+\begin{align*}
+&Z=X+iY\\
+&\text{Notar que: }e^{iX}=\cos{X} +i\sin{X}
+\end{align*}
+$$
+
+Definição: Seja $X$ uma v.a real qualquer. Defini-se a Função Característica (FC) de $X$ como:
+
+$$
+\begin{align*}
+&\Large\varphi\normalsize_X(t)=E\left[\cos (tX)\right]+iE\left[\sin (tX)\right]
+\end{align*}
+$$
+
+Notar que, a diferença da FGM, $\Large\varphi\normalsize(t)\in \mathbb{C}$.
+<br>A grande vantagem da FC sobre a FGM é que a FC, SEMPRE existe.
+
+Notar também que se a FGM existir então $\Large\varphi\normalsize_X(t)=M_X(it)$
+
+Para calcular na prática a FC podemos utilizar:
+
+$$
+\begin{align*}
+&\Large\varphi\normalsize_X(t)=
+\left\{
+\begin{array}{ll}
+\sum e^{itx}P(X=x),&X\text{ discreto}\\
+\overset{+\infty}{\underset{-\infty}{\int}}e^{itx}f(x)dx,&X\text{ contínuo}
+\end{array}
+\right.
+\end{align*}
+$$
+
+## Propriedades da Função Característica
+
+$$
+\begin{align*}
+&FC1:\;\Large\varphi\normalsize_X(0)=1\\
+&FC2:\;|\Large\varphi\normalsize_X(t)|\le1,\;\forall t\in\mathbb{R}\\
+&FC3:\;\Large\varphi\normalsize_X(t)=\Large\varphi\normalsize_X(-t)\\
+&FC4:\;\Large\varphi\normalsize_X\text{ é uniformemente contínua na reta.}\\
+&FC5:\;\text{Se X e Y são v.a's independentes, então:}\\
+&\qquad\quad\Large\varphi\normalsize_{X+Y}(t)=\Large\varphi\normalsize_X(t)\Large\varphi\normalsize_Y(t)\\
+&FC6:\;\text{A FC de uma v.a X determina a função distribuição de X}\\
+&\qquad\quad\text{Fórmula de Inversão: }
+F(y)-F(x)=\frac{1}{2\pi}\lim_{u\rightarrow\infty}\overset{u}{\underset{-u}{\int}}\frac{e^{-itx}-e^{-ity}}{it}\Large\varphi\normalsize_X(t)\\
+&FC7:\;\text{A v.a X tem distribuição simétrica em torno de zero sse }\Large\varphi\normalsize_X(t)\text{ é real},\;\forall t\\
+&FC8:\;\text{Se } Y=aX+b,\;a,b\in\mathbb{R}\text{ então }\Large\varphi\normalsize_X(t)=e^{itb}\Large\varphi\normalsize_X(at)\\
+&FC9:\;\text{Se }E[|X|^n]<\infty,\text{ então }\Large\varphi\normalsize_X\text{ possui n derivadas contínuas}\\
+&\qquad\quad E[X^k]=\frac{1}{i^k}\Large\varphi\normalsize_X^{(k)}(0)\\
+&\qquad\quad\text{(ou seja, a FC, também é uma espécie de geradora de momentos)}
+\end{align*}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
