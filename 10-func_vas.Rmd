@@ -1,3 +1,89 @@
 # FUNÇÕES DE VARIÁVEIS ALEATÓRIAS
 
-PROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOB
+## Esperança de Função de V.a's
+
+É claro que, dada uma v.a $X$ a função $Y=g(X)$ também será uma v.a desde que g seja uma função apropriada(mensurável).
+
+Exemplo:<br> Seja $X$ uma v.a tal que $P(X=-1)=P(X=1)=\frac{1}{2}$.
+Defina a função $Y=X²$, então $Y=X²$ também será uma v.a no mesmo e.p com f.p dada por $P(Y=1)=1$, ou seja, $Y$ é massa pontual em 1.
+<br>(notar que: $E(X²)=E(Y)=1\cdot P(Y=1)=1$)
+
+Definição: Seja $X$ uma v.a em $(\Omega,\mathbb{A},P)$ e seja $Y=g(X)$ uma função mensurável em $\mathbb{R}$. Então:
+
+$$
+\begin{align*}
+&E(Y)=E\left[g(X)\right]=\int g(x)dF(x)=
+\left\{
+\begin{array}{ll}
+\underset{x}{\sum}g(x)P(X=x),&X\text{ discreto}\\
+\overset{+\infty}{\underset{-\infty}{\int}}g(x)f(x)dx,&X\text{ contínua}
+\end{array}
+\right.
+\end{align*}
+$$
+
+Um caso importante de função de v.a é $g(x)=x^k,\;k=1,2,3,...$
+
+Definição: Seja X uma v.a. O valor $E(X-b)^k$, se existir, é chamado k-ésimo momento de $X$ em torno de $b$, para $b\in\mathbb{R},k=1,2,...$
+
+O k-ésimo momento de $X$ em torno de zero, $E(X^k)$, é chamdo simplesmente de k-ésimo momento de X ou momento de ordem $k$.
+
+O k-ésimo momento de $X$ em torno de sua média,$E(X-E(X))^k$, é chamado k-ésimo momento central de $X$
+
+obs:
+
+$$
+\begin{align*}
+&1)\text{ O primeiro momento de X é }E(X)\\
+&2)\text{ O primeiro momento central é zero, pois: }\\
+&\quad E(X-E(X))=E(X)-E(E(X))=E(X)-E(X)=0\\
+&3)\text{ O segundo momento central será a variância:}\\
+&\quad\text{Prova: }E(X-E(X))²=E(X²-2XE(X)+[E(X)]²)\\
+&\qquad\qquad =E(X²)-2E(X)E(X)+[E(X)]²\\
+&\qquad\qquad =E(X²)-2[E(X)]²+[E(X)]²\\
+&\qquad\qquad =E(X²)-[E(X)]²=Var(X)
+\end{align*}
+$$
+
+Definição: Define-se o desvio padrão de $X$ como a raiz positiva da variância:$\Large\sigma\normalsize_X=\sqrt{Var(X)}$
+
+Proposição:
+
+$$
+\begin{align*}
+&1)\text{ Se }X=c,\text{ entâo } Var(X)=0\\
+&2)\;Var(X+b)=Var(X)\text{ e }Var(aX+b)=a²Var(X)\\
+&3)\text{ Desigualdade básica. Se X é uma v.a,não negativa então:}\\
+&\quad P(X\ge\lambda)\le\frac{1}{\lambda}E(X),\;\forall\lambda>0\\
+&4)\text{ Desiqualdade clássica de Tchebychev. Se X é integrável, então:}\\
+&\quad P(|X-E(X)|\ge\lambda)\le\frac{Var(X)}{\lambda²},\;\forall\lambda>0\\
+&5)\text{ Desigualdade de Markov. Para qualquer v.a X:}\\
+&\quad P(|X|\ge\lambda)\le\frac{E|X|^t}{\lambda^t},\;\forall\lambda>0,t>0
+\end{align*}
+$$
+
+Proposição: Seja $X$ integrável com $E(X)=\mu$. Então, $\mu$ é o valor que minimiza $E(X-c)²,\;c\in\mathbb{R}$.
+<br> Ou seja, $Var(X)=E(X-E(X))²=\underset{c}{\min}E(X-c)²$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
