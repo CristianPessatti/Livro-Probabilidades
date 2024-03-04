@@ -1,7 +1,98 @@
 # VARIÁVEIS ALEATÓRIAS
 
+## Definição de uma Variável Aleatória
+
 Quando realizamos um experimento aleatório existem algumas características numéricas que são registradas.
 
 Por exemplo: número de caras em $n$ lançamentos de uma moeda, tempo de vida de um componente, salário, idade, etc. em um questionário sócio econômico.
 
-Vamos dizer, informalmente, que uma variável aleatória é uma característica numérica de um experimento aleatório
+Vamos dizer, informalmente, que uma variável aleatória é uma característica numérica de um experimento aleatório.
+
+Exemplo: Seja $\varepsilon$: lançar uma moeda honesta três vezes e registrar o resultado.
+
+$$
+\begin{align*}
+&\Omega=\{
+  \overset{\omega_1}{(c,c,c)},
+  \overset{\omega_2}{(c,c,\overline c)},
+  \overset{\omega_3}{(c,\overline c,c)},
+  \overset{\omega_4}{(\overline c,c,c)},
+  \overset{\omega_5}{(\overline c,\overline c,c)},
+  \overset{\omega_6}{(\overline c,c,\overline c)},
+  \overset{\omega_7}{(c,\overline c,\overline c)},
+  \overset{\omega_8}{(\overline c,\overline c,\overline c)},
+\}\\
+\\
+&\mathbb{A}=\mathcal{P}(\Omega)\\
+\\
+&p(\omega_i)=\frac18,\; i=1,...,8\\
+\end{align*}
+$$
+
+Defina a função $X(\omega_1):$ número de caras em $\omega_i$
+
+Assim: $X(\omega_1)=3,\;X(\omega_2)=2,...,\;X(\omega_8)=0$
+
+Podemos escrever $X\in\{0,1,2,3\}$
+
+**Definição:** Uma variável aleatória X em um espaço de probabilidade $(\Omega,\mathbb A,P)$ é uma função real definida sobre $\Omega$ tal que o evento $[X\le x]=\{\omega\in\Omega/X(\omega)\le x,\forall x\in\mathbb R\}$ é um evento aleatório, ou seja $[X\le x]\in\mathbb A$
+
+No exemplo anterior:
+- Seja $x=-1:\;[X\le-1]=\phi\in\mathbb A$
+- Seja $x<0:\;[X\le-1]=\phi\in\mathbb A$
+- Seja $x=0:\;[X\le0]=\{\omega_8\}\in\mathbb A$
+- Seja $x=\pi:\;[X\le\pi]=\Omega\in\mathbb A$
+- Seja $x=1,83:\;[X\le1,83]=\{\omega_5,\omega_6,\omega_7,\omega_8\}\in\mathbb A$
+
+## Função de Distribuição
+
+A função de distribuição de uma variável aleatória $X$, representada por $F_X$ (ou apenas $F$ se não houver problemas de interpretação), é definida como:
+
+$$
+\begin{align*}
+&F_X(x)=P(X\le x),\;\forall x\in\mathbb R
+\end{align*}
+$$
+
+obs: $F_X$ também é chamada função de distribuição acumulada (FDA)
+
+### Propriedades de uma F.D.
+
+Uma função $F$ será função distribuição de alguma variável aleatória $X$ se:
+1. $F$ é não decrescente, i.e., se $x<y$ então $F(x)\le F(y)$
+2. $F$ é contínua a direita, i.e., se $X_n\downarrow x$ então $F(x_n)\downarrow F(x)$
+3. Se $X_n\downarrow-\infty\rightarrow F(x_n)\downarrow0$ e se $X_n\uparrow+\infty\rightarrow F(x_n)\uparrow1$. Isso é geralmente simbolizado como: $F(-\infty)=0$ e $F(+\infty)=1$
+
+## Tipos de Variáveis Aleatórias
+
+### Discreta
+
+**Definição:** uma variável aleatória $X$ em $(\Omega,\mathbb A,P)$ será chamada **discreta** se ela assume um número finito ou enumerável de valores, i.e., se existe um conjunto finito ou enumerável $\{x_1,x_2,...\}\subset\mathbb R$ (Os valores de uma v.a. discreta não necessariamente serão inteiros) tal que $X(\omega)\in\{x_1,x_2,...\};\;\forall\omega\in\Omega$
+
+A função $p_X(x_i)=p(x_i)$ definida por $p(x_i)=P(X=x_i),\;i=1,2,...$ é chamada **função de probabilidade de $X$**.
+
+Para encontrarmos a função distribuição a partir de uma função de probabilidade, podemos fazer o seguinte processo:
+
+$$
+\begin{align*}
+&F_X(x)=\sum_{i/x_i\le x}P(X=x_i)=\sum_{i/x_i\le x}p(x_i), \text{ pois }[X\le x_i]=\underset{i/x_i\le x}{\cup}[X=x_i] 
+\end{align*}
+$$
+
+### Contínua
+
+**Definição:** uma variável aleatória $X$ em $(\Omega,\mathbb A,P)$ será chamada **contínua** se existe uma função $f(x)\ge0$ chamada **função densidade** de $X$ tal que:
+
+$$
+\begin{align*}
+&F_X(x)=\int_{-\infty}^xf(t)dt,\;\forall x\in\mathbb R
+\end{align*}
+$$
+
+**Proposição:** Uma função $f(x)\ge0$ será densidade de alguma variável aleatória $X$ se, e somente se $\int_{-\infty}^{+\infty}f(x)dx=1$.
+
+Em suma, para saber se uma variável aleatória possui densidade, podemos utilizar o seguinte critério prático:
+
+**$X$ terá densidade se:**
+1. $F_X$ é contínua
+2. $F_X$ é derivável por partes, ou seja, $F_X$ existe no interior de um número finito ou enumerável de intervalos fechados, cuja união é a reta real.
