@@ -66,6 +66,171 @@ Proposição: Seja $X$ integrável com $E(X)=\mu$. Então, $\mu$ é o valor que 
 <br> Ou seja, $Var(X)=E(X-E(X))²=\underset{c}{\min}E(X-c)²$
 
 
+## Distribuição de Funções de V.a's
+
+Dada uma v.a $X$ com distribuição conhecida e dada uma transformação $Y=g(X)$, sendo $g$ enumerável.
+<br>O objetivo é encontrar a distribuição de $Y$ a partir da distribuição de $X$.
+
+### Caso discreto
+
+Seja $X$ v.a discreta em $\{x_1,x_2,...\}$
+<br>Seja $Y=g(X) \rightarrow Y\in\{g(x_1),g(x_2),...\}$
+<br>Então:
+
+$$
+\begin{align*}
+&P(Y=y)=P(g(x)=y)=P(X=g^{-1}(y))
+\end{align*}
+$$
+
+Exemplo: Seja $X$ com a seguinte distribuição:
+
+$$
+\begin{array}{l|l|l|l|}
+X&-2&-1&0&2\\
+\hline
+P_X&\frac{1}{8}&\frac{1}{4}&\frac{1}{2}&\frac{1}{8}\\
+\end{array}
+$$
+
+Defina a nova v.a $Y=g(X)=X²$, vemos que $Y\in\{0,1,4\}$.
+
+$$
+\begin{align*}
+&P(Y=0)=P(X=0)=\frac{1}{2}\\
+&P(Y=1)=P(X=-1)=\frac{1}{4}\\
+&P(Y=4)=P(X=-2)+P(X=2)=\frac{1}{8}+\frac{1}{8}=\frac{1}{4}
+\end{align*}
+$$
+
+Seja $U=1+\cos(\pi X)$. $U\in\{0,2\}$
+
+$$
+\begin{align*}
+&\begin{array}{l|l|l|l|}
+X&-2&-1&0&2\\
+\hline
+P_X&\frac{1}{8}&\frac{1}{4}&\frac{1}{2}&\frac{1}{8}\\
+\hline
+U&2&0&2&2\\
+\hline
+\end{array}\\
+\\
+&P(U=0)=P(X=-1)=\frac{1}{4}\\
+&P(U=2)=1-P(U=0)=\frac{3}{4}
+\end{align*}
+$$
+
+Exemplo: Seja $X\sim Geo(p),\;x=0,1,2,...$
+
+$$
+\begin{align*}
+&P(X=x)=p(1-p)^x\quad,x=0,1,2,...
+\end{align*}
+$$
+
+Seja $Y=X+1\rightarrow Y\in\{1,2,3,...\}$
+
+$$
+\begin{align*}
+&\overset{P_Y(y)}{P(Y=y)}=P(X+1=y)=\overset{P_X(y-1)}{P(X=y-1)}\\
+&\qquad\qquad=p(1-p)^{y-1}\;,\;y=1,2,3,...\\
+&\text{Portanto:}\\
+&\qquad\qquad Y\sim Geo(p)\;,\;y=1,2,3,...
+\end{align*}
+$$
+
+### Caso contínuo
+
+Exemplo: Seja $X\sim U(0,1)$
+
+$$
+\begin{align*}
+&f_X(x)=1,\quad 0<x<1\\
+&F_X(x)=x,\quad 0<x<1
+\end{align*}
+$$
+
+Defina $Y=-\ln{X}$
+
+$$
+\begin{align*}
+&F_Y(y)=P(Y\le y)=P(-\ln{X}\le y)=P(\ln{X}\ge -y)=P(X\ge e^{-y})\\
+&=1-P(X\le e^{-y})=1-F_X(e^{-y})=1-e^{-y}\\
+&\text{pois, }0<e^{-y}<1 \text{ se } y>0
+\end{align*}
+$$
+
+Assim, $F_Y(y)=1-e^{-y},\quad y>0.$
+<br>$\rightarrow Y\sim \exp(1)$
+
+## Jacobiano
+
+Teorema: Seja $X$ uma v.a contínua com densidade $f_X(x)$. Seja $Y$ a transformação:$Y=g(X)$, 
+com g sendo bijetora sobre alguma região aberta. Então:
+
+$$
+\begin{align*}
+&f_Y(y)=f_X(g^{-1}(y))|J(x,y)|
+\end{align*}
+$$
+
+sendo $J(x,y)=\frac{dx}{dy}=\frac{d\left[g^{-1}(y)\right]}{dy}$, chamado o Jacobiano de transformação.
+
+Exemplo_1: Se $Y=g(X)$
+
+$$
+\begin{align*}
+&F_Y(y)=P(Y\le y)=P(g(X)\le y)=\overset{\text{se }g^{-1}\text{ existe}}{P(X\le g^{-1}(y))}=F_X(g^{-1}(y))\\
+&F_Y(y)=F_X(g^{-1}(y))\\
+&\text{Derivando ambos os membros:}\\
+&f_Y(y)=f_X(g^{-1}(y))\left|\left[g^{-1}(y)\right]'\right|
+\end{align*}
+$$
+
+do exemplo contínuo:
+
+$$
+\begin{align*}
+&f_X(x)=1,\quad 0<x<1\qquad\qquad\qquad y=g(x)=-\ln X\rightarrow x=g^{-1}(y)=e^{-y}\\
+&\text{Assim,}\\
+&f_Y(y)=f_X(e^{-y})\left|\left[e^{-y}\right]'\right|=e^{-y},\quad y>0
+\end{align*}
+$$
+
+Exemplo_2: Seja $X\sim N(0,1)$ e seja $Y=X²$. Encontrar a distribuição de $Y$.
+
+$$
+\begin{align*}
+&f_X(x)=\frac{1}{\sqrt{2\pi}}{\Large e^{-\frac{x²}{2}},\quad x\in\mathbb{R}}
+\end{align*}
+$$
+
+como $Y=g(X)=X^2$, então existem duas inversas, dependendo da região.
+<br>Nesse caso, define-se:
+
+$$
+\begin{align*}
+&g_1^{-1}(y)=-\sqrt{y}\quad\text{e}\quad g_2^{-1}(y)=\sqrt{y}
+\qquad J_1(x,y)=\frac{-1}{2\sqrt{y}}\quad\text{e}\quad J_2(x,y)=\frac{1}{2\sqrt{y}}\\
+\\
+&f_Y(y)=f_X(g_1^{-1}(y))|J_1|+f_X(g_2^{-1}(y))|J_2|\\
+&=\frac{1}{\sqrt{2\pi}}{\Large e^\frac{{-\left[-\sqrt{y}\right]²}}{2}}\left|\frac{-1}{2\sqrt{y}}\right|+
+\frac{1}{\sqrt{2\pi}}{\Large e^\frac{{-\left[\sqrt{y}\right]²}}{2}}\left|\frac{1}{2\sqrt{y}}\right|=
+2\frac{1}{\sqrt{2\pi}}{\Large e^{\frac{-y}{2}}}\frac{1}{2\sqrt{y}}=\frac{1}{\sqrt{2\pi y}}{\Large e^{\frac{-y}{2}}},\quad y>0\\
+&\text{Assim: }Y\sim{\large\chi}^{2}_{(1)}
+\end{align*}
+$$
+
+Se $X_1,X_2,...,X_n$ são iid $N(0,1)\;\longrightarrow X^{2}_{1}+X^{2}_{2}+...+X^{2}_{n}\sim{\large\chi}^{2}_{(n)}$
+
+
+
+
+
+
+
+
 
 
 
