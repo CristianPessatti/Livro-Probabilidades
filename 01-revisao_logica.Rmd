@@ -1,3 +1,22 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # REVISÃO - OPERADORES LÓGICOS
 
+## Noções de lógica
+
+Uma proposição é uma sentença declarativa que pode ser classficada com um valor lógico de V ou F, seguindo os seguintes princípios:
+
+- Príncipio da Não-Contradição:
+
+  Uma proposição não ser falsa e verdadeira oa mesmo tempo.
+  
+- Princípio do Terceiro Excluído:
+
+  Uma proposição só pode assumir o valor (V) de verdadeiro ou o valor (F) de falso, não havendo a possibilidade de assumir valores diferentes
+
 EM PROGRESSO
+
+
