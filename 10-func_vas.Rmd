@@ -1,3 +1,225 @@
 # FUNÇÕES DE VARIÁVEIS ALEATÓRIAS
 
-PROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOB
+## Esperança de Função de V.a's
+
+É claro que, dada uma v.a $X$ a função $Y=g(X)$ também será uma v.a desde que g seja uma função apropriada(mensurável).
+
+Exemplo:<br> Seja $X$ uma v.a tal que $P(X=-1)=P(X=1)=\frac{1}{2}$.
+Defina a função $Y=X²$, então $Y=X²$ também será uma v.a no mesmo e.p com f.p dada por $P(Y=1)=1$, ou seja, $Y$ é massa pontual em 1.
+<br>(notar que: $E(X²)=E(Y)=1\cdot P(Y=1)=1$)
+
+Definição: Seja $X$ uma v.a em $(\Omega,\mathbb{A},P)$ e seja $Y=g(X)$ uma função mensurável em $\mathbb{R}$. Então:
+
+$$
+\begin{align*}
+&E(Y)=E\left[g(X)\right]=\int g(x)dF(x)=
+\left\{
+\begin{array}{ll}
+\underset{x}{\sum}g(x)P(X=x),&X\text{ discreto}\\
+\overset{+\infty}{\underset{-\infty}{\int}}g(x)f(x)dx,&X\text{ contínua}
+\end{array}
+\right.
+\end{align*}
+$$
+
+Um caso importante de função de v.a é $g(x)=x^k,\;k=1,2,3,...$
+
+Definição: Seja X uma v.a. O valor $E(X-b)^k$, se existir, é chamado k-ésimo momento de $X$ em torno de $b$, para $b\in\mathbb{R},k=1,2,...$
+
+O k-ésimo momento de $X$ em torno de zero, $E(X^k)$, é chamdo simplesmente de k-ésimo momento de X ou momento de ordem $k$.
+
+O k-ésimo momento de $X$ em torno de sua média,$E(X-E(X))^k$, é chamado k-ésimo momento central de $X$
+
+obs:
+
+$$
+\begin{align*}
+&1)\text{ O primeiro momento de X é }E(X)\\
+&2)\text{ O primeiro momento central é zero, pois: }\\
+&\quad E(X-E(X))=E(X)-E(E(X))=E(X)-E(X)=0\\
+&3)\text{ O segundo momento central será a variância:}\\
+&\quad\text{Prova: }E(X-E(X))²=E(X²-2XE(X)+[E(X)]²)\\
+&\qquad\qquad =E(X²)-2E(X)E(X)+[E(X)]²\\
+&\qquad\qquad =E(X²)-2[E(X)]²+[E(X)]²\\
+&\qquad\qquad =E(X²)-[E(X)]²=Var(X)
+\end{align*}
+$$
+
+Definição: Define-se o desvio padrão de $X$ como a raiz positiva da variância:$\Large\sigma\normalsize_X=\sqrt{Var(X)}$
+
+Proposição:
+
+$$
+\begin{align*}
+&1)\text{ Se }X=c,\text{ entâo } Var(X)=0\\
+&2)\;Var(X+b)=Var(X)\text{ e }Var(aX+b)=a²Var(X)\\
+&3)\text{ Desigualdade básica. Se X é uma v.a,não negativa então:}\\
+&\quad P(X\ge\lambda)\le\frac{1}{\lambda}E(X),\;\forall\lambda>0\\
+&4)\text{ Desiqualdade clássica de Tchebychev. Se X é integrável, então:}\\
+&\quad P(|X-E(X)|\ge\lambda)\le\frac{Var(X)}{\lambda²},\;\forall\lambda>0\\
+&5)\text{ Desigualdade de Markov. Para qualquer v.a X:}\\
+&\quad P(|X|\ge\lambda)\le\frac{E|X|^t}{\lambda^t},\;\forall\lambda>0,t>0
+\end{align*}
+$$
+
+Proposição: Seja $X$ integrável com $E(X)=\mu$. Então, $\mu$ é o valor que minimiza $E(X-c)²,\;c\in\mathbb{R}$.
+<br> Ou seja, $Var(X)=E(X-E(X))²=\underset{c}{\min}E(X-c)²$
+
+
+## Distribuição de Funções de V.a's
+
+Dada uma v.a $X$ com distribuição conhecida e dada uma transformação $Y=g(X)$, sendo $g$ enumerável.
+<br>O objetivo é encontrar a distribuição de $Y$ a partir da distribuição de $X$.
+
+### Caso discreto
+
+Seja $X$ v.a discreta em $\{x_1,x_2,...\}$
+<br>Seja $Y=g(X) \rightarrow Y\in\{g(x_1),g(x_2),...\}$
+<br>Então:
+
+$$
+\begin{align*}
+&P(Y=y)=P(g(x)=y)=P(X=g^{-1}(y))
+\end{align*}
+$$
+
+Exemplo: Seja $X$ com a seguinte distribuição:
+
+$$
+\begin{array}{l|l|l|l|}
+X&-2&-1&0&2\\
+\hline
+P_X&\frac{1}{8}&\frac{1}{4}&\frac{1}{2}&\frac{1}{8}\\
+\end{array}
+$$
+
+Defina a nova v.a $Y=g(X)=X²$, vemos que $Y\in\{0,1,4\}$.
+
+$$
+\begin{align*}
+&P(Y=0)=P(X=0)=\frac{1}{2}\\
+&P(Y=1)=P(X=-1)=\frac{1}{4}\\
+&P(Y=4)=P(X=-2)+P(X=2)=\frac{1}{8}+\frac{1}{8}=\frac{1}{4}
+\end{align*}
+$$
+
+Seja $U=1+\cos(\pi X)$. $U\in\{0,2\}$
+
+$$
+\begin{align*}
+&\begin{array}{l|l|l|l|}
+X&-2&-1&0&2\\
+\hline
+P_X&\frac{1}{8}&\frac{1}{4}&\frac{1}{2}&\frac{1}{8}\\
+\hline
+U&2&0&2&2\\
+\hline
+\end{array}\\
+\\
+&P(U=0)=P(X=-1)=\frac{1}{4}\\
+&P(U=2)=1-P(U=0)=\frac{3}{4}
+\end{align*}
+$$
+
+Exemplo: Seja $X\sim Geo(p),\;x=0,1,2,...$
+
+$$
+\begin{align*}
+&P(X=x)=p(1-p)^x\quad,x=0,1,2,...
+\end{align*}
+$$
+
+Seja $Y=X+1\rightarrow Y\in\{1,2,3,...\}$
+
+$$
+\begin{align*}
+&\overset{P_Y(y)}{P(Y=y)}=P(X+1=y)=\overset{P_X(y-1)}{P(X=y-1)}\\
+&\qquad\qquad=p(1-p)^{y-1}\;,\;y=1,2,3,...\\
+&\text{Portanto:}\\
+&\qquad\qquad Y\sim Geo(p)\;,\;y=1,2,3,...
+\end{align*}
+$$
+
+### Caso contínuo
+
+Exemplo: Seja $X\sim U(0,1)$
+
+$$
+\begin{align*}
+&f_X(x)=1,\quad 0<x<1\\
+&F_X(x)=x,\quad 0<x<1
+\end{align*}
+$$
+
+Defina $Y=-\ln{X}$
+
+$$
+\begin{align*}
+&F_Y(y)=P(Y\le y)=P(-\ln{X}\le y)=P(\ln{X}\ge -y)=P(X\ge e^{-y})\\
+&=1-P(X\le e^{-y})=1-F_X(e^{-y})=1-e^{-y}\\
+&\text{pois, }0<e^{-y}<1 \text{ se } y>0
+\end{align*}
+$$
+
+Assim, $F_Y(y)=1-e^{-y},\quad y>0.$
+<br>$\rightarrow Y\sim \exp(1)$
+
+## Jacobiano
+
+Teorema: Seja $X$ uma v.a contínua com densidade $f_X(x)$. Seja $Y$ a transformação:$Y=g(X)$, 
+com g sendo bijetora sobre alguma região aberta. Então:
+
+$$
+\begin{align*}
+&f_Y(y)=f_X(g^{-1}(y))|J(x,y)|
+\end{align*}
+$$
+
+sendo $J(x,y)=\frac{dx}{dy}=\frac{d\left[g^{-1}(y)\right]}{dy}$, chamado o Jacobiano de transformação.
+
+Exemplo_1: Se $Y=g(X)$
+
+$$
+\begin{align*}
+&F_Y(y)=P(Y\le y)=P(g(X)\le y)=\overset{\text{se }g^{-1}\text{ existe}}{P(X\le g^{-1}(y))}=F_X(g^{-1}(y))\\
+&F_Y(y)=F_X(g^{-1}(y))\\
+&\text{Derivando ambos os membros:}\\
+&f_Y(y)=f_X(g^{-1}(y))\left|\left[g^{-1}(y)\right]'\right|
+\end{align*}
+$$
+
+do exemplo contínuo:
+
+$$
+\begin{align*}
+&f_X(x)=1,\quad 0<x<1\qquad\qquad\qquad y=g(x)=-\ln X\rightarrow x=g^{-1}(y)=e^{-y}\\
+&\text{Assim,}\\
+&f_Y(y)=f_X(e^{-y})\left|\left[e^{-y}\right]'\right|=e^{-y},\quad y>0
+\end{align*}
+$$
+
+Exemplo_2: Seja $X\sim N(0,1)$ e seja $Y=X²$. Encontrar a distribuição de $Y$.
+
+$$
+\begin{align*}
+&f_X(x)=\frac{1}{\sqrt{2\pi}}{\Large e^{-\frac{x²}{2}},\quad x\in\mathbb{R}}
+\end{align*}
+$$
+
+como $Y=g(X)=X^2$, então existem duas inversas, dependendo da região.
+<br>Nesse caso, define-se:
+
+$$
+\begin{align*}
+&g_1^{-1}(y)=-\sqrt{y}\quad\text{e}\quad g_2^{-1}(y)=\sqrt{y}
+\qquad J_1(x,y)=\frac{-1}{2\sqrt{y}}\quad\text{e}\quad J_2(x,y)=\frac{1}{2\sqrt{y}}\\
+\\
+&f_Y(y)=f_X(g_1^{-1}(y))|J_1|+f_X(g_2^{-1}(y))|J_2|\\
+&=\frac{1}{\sqrt{2\pi}}{\Large e^\frac{{-\left[-\sqrt{y}\right]²}}{2}}\left|\frac{-1}{2\sqrt{y}}\right|+
+\frac{1}{\sqrt{2\pi}}{\Large e^\frac{{-\left[\sqrt{y}\right]²}}{2}}\left|\frac{1}{2\sqrt{y}}\right|=
+2\frac{1}{\sqrt{2\pi}}{\Large e^{\frac{-y}{2}}}\frac{1}{2\sqrt{y}}=\frac{1}{\sqrt{2\pi y}}{\Large e^{\frac{-y}{2}}},\quad y>0\\
+&\text{Assim: }Y\sim{\large\chi}^{2}_{(1)}
+\end{align*}
+$$
+
+Se $X_1,X_2,...,X_n$ são iid $N(0,1)\;\longrightarrow X^{2}_{1}+X^{2}_{2}+...+X^{2}_{n}\sim{\large\chi}^{2}_{(n)}$

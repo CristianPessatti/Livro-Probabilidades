@@ -36,8 +36,8 @@ $$
 \begin{align*}
 &X =
   \begin{cases}
-    1 \;\text{, se cara}\\
-    0 \;\text{, se coroa}
+    1 & \text{, se cara}\\
+    0 & \text{, se coroa}
   \end{cases}
 \end{align*}
 $$
@@ -62,34 +62,111 @@ $$
 
 ### Modelo Geométrico
 
-Suponha que vamos realizar uma sequência de ensaios de Bernoulli até acontecer o primeiro sucesso, e seja X a quantidade de fracassos antes do primeiro sucesso. Então X segue uma geométrica de parâmetro $p$, onde $p$ é a probabilidade de sucesso: $X\sim Geo(p)$
+Suponha que vamos realizar uma sequência de ensaios de Bernoulli até acontecer o primeiro sucesso, e seja X a quantidade de fracassos antes do primeiro sucesso. Então X segue uma geométrica de parâmetro $p$, onde $p$ é a probabilidade de sucesso. 
 
-Função de Probabilidade: $p(x)=p(1-p)^x$
+Notação: $X\sim Geo(p)$
 
-Exemplo: Em uma fábrica de um item qualquer, a probabilidade de um item apresentar defeito é $\frac{1}{100}$. Qual a probabilidade do centésimo item ser o primeiro a apresentar defeito?
+Função de Probabilidade: $p(x)=p(1-p)^x,\;x=0,1,2,...$
 
-Nesse caso, chamaremos o item com defeito de sucesso. Portanto $X\sim Geo(\frac{1}{100})$
+Exemplo: Em uma linha de produção de alta precisão, assim que um item apresenta defeito, a linha de produção é interrompida para manutenção. A probabilidade de ter um defeito em um dia é de $\frac{1}{100}$. Qual a probabilidade de termos uma manutenção no sexto dia?
 
 $$
 \begin{align*}
-p(99)=\frac{1}{100}\Big(\frac{99}{100}\Big)^{99} = 
+p(5)=\Big(\frac{1}{100}\Big)\cdot\Big(\frac{99}{100}\Big)^5=
 \end{align*}
 $$
 
-### Modelo de Poisson
+### Modelo Poisson
 
-Quando queremos análisar a quantidade de ocorrências de um certo evento em uma unidade de medida, usaremos o modelo de Poisson.
+Suponha que nosso interesse seja contar a quantidade de eventos que ocorreram em uma unidade de medida. Chamaremos de $\lambda$ a taxa de ocorrência do evento por unidade de medida, e diremos que $X$ segue um modelo Poisson de parâmetro $\lambda$.
 
-Notação: $X\sim Poisson(\lambda)$ onde $\lambda$ é a taxa de ocorrência do evento pela unidade de medida estabelecida
+Notação: $X\sim Pois(\lambda)$
 
-Função de Probabilidade: $p(x)=P(X=x)=\frac{e^{-\lambda}\cdot\lambda^x}{x!}$
+Função de Probabilidade: $p(x)=\frac{e^{-\lambda}\cdot\lambda^x}{x!},\;x=0,1,...$
 
-Exemplo: Em um pedágio em média passam 50 carros por dia, qual a probabilidade de passar 60 carros em um dia?
+Exemplo: Em um certo pedágio, passam em média 50 carros em uma manhã qualquer, qual a probabilidade de passar 60 carros em uma manhã?
 
 $$
 \begin{align*}
-p(60)=\frac{e^{-50}\cdot50^{60}}{60!} = 
+p(60)=\frac{e^{-50}\cdot\lambda^{60}}{60!}=
 \end{align*}
 $$
 
 ## Modelos Contínuos
+
+### Modelo Uniforme Contínuo
+
+Diremos que $X$ segue um modelo uniforme contínuo no intervalo $[a,b]\subset\mathbb{R}$ se todos os subintervalos de $[a,b]$ de mesmo comprimento tenham a mesma probabilidade.
+
+Notação: $X\sim U[a,b]$
+
+Função de Densidade: $f(x)=\frac1{b-a},\;a\le x\le b$
+
+Exemplo: em um programa de TV que dura 1 hora, o telespectador pode mudar de canal a qualquer momento. Qual a probabilidade de que o telespectador assista a maior parte do programa.
+
+Solução: $X\sim U[0,1]$Assistir a maior parte significa assistir mais de $\frac12$ do programa, portanto queremos $P(X>\frac12)$, podemos resolver essa probabilidade de maneira geométrica. A área que queremos obter é a área entre $\frac12$ e $1$:
+
+```{r graficoud, echo=FALSE, out.width='65%', fig.align='center'}
+x <- seq(0,1,length.out=100)
+y <- rep(1,100)
+plot(x,y, type='l', xlim = c(0,1), ylim = c(0,2))
+rect(1/2, 0, 1, 0.99, col = "lightblue", border = NA)
+```
+
+É fácil notar que a área do retângulo é $\frac12\cdot1=\frac12$, portanto $P(X>\frac12)=\frac12$.
+
+### Modelo Exponencial
+
+Suponha que queremos determinar o tempo de espera para o ocorrência de um evento. Então usaremos uma distribuição exponencial de parâmetro $\lambda$ onde $\lambda$ representa a taxa de ocorrência do evento por unidade de medida.
+
+Notação: $X\sim exp(\lambda)$
+
+Função de Densidade: $f(x)=\lambda e^{-\lambda x},\;x>0$
+
+Exemplo: Um *call center* recebe chamadas telefônicas a cada $X$ horas, a taxa de ocorrência por hora é de 5 chamadas. Qual a probabilidade de um intervalo entre chamadas ser inferior a 30 minutos?
+
+$$
+\begin{align*}
+&X\sim exp(5)\\
+&f(x)=5e^{-5x},\;x>0\\
+&P(X<\frac12)=\int_0^\frac125e^{-5x}dx=-e^{-5x}|_0^\frac12\\
+&=1-e^\frac52=0,918
+\end{align*}
+$$
+
+### Modelo Normal
+
+Uma variável aleatória $X$ segue um modelo normal se sua função de densidade é a seguinte:
+
+$$
+\begin{align*}
+&f(x)=\frac1{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\;x\in\mathbb{R}
+\end{align*}
+$$
+
+Os parâmetros $\mu$ e $\sigma$ representam respectivamente a média e variância da distribuição.
+
+```{r graficonormal, echo=FALSE, fig.align='center', out.width='65%'}
+x <- seq(-4,4, length.out=100)
+y <- dnorm(x, mean = 0, sd=1)
+plot(x,y, type='l', axes=F, xlab='', ylab='')
+abline(v=0, col='red')
+abline(v=-4, col='black')
+abline(h=0,col='black')
+mtext(expression(mu), side = 1, line = 1, at = 0, col = 'red', cex = 1.5)
+```
+
+A função de distribuição da Normal não possui forma fechada pois sua integral não possui primitiva. E, também, integrar sua função de densidade para encontrar probabilidades não é algo trivial. Portando, usaremos uma técnica chamada **padronização**.
+
+**Proposição:** Seja $X\sim N(\mu, \sigma^2)\text{, então } Z=\frac{X-\mu}{\sigma}$ terá distribuição $N(0,1)$.
+
+Assim, para encontrar as probabilidades de interesse em uma Normal qualquer, encontraremos a probabilidade equivalente em uma $N(0,1)$ (chamada "Normal Padrão"). Os valores da função de distribuição da Normal Padrão são representados por $\Phi(z)$, e estão organizados em uma tabela para auxiliar nos cálculos de probabilidade.
+
+$$
+\begin{align*}
+&X\sim N(\mu,\sigma^2)\\
+&Z=\frac{X-\mu}\sigma\sim N(0,1)\\
+&P(a\le X\le b) = P(\frac{a-\mu}\sigma\le Z\le\frac{b-\mu}\sigma)=
+\Phi(\frac{b-\mu}\sigma)-\Phi(\frac{a-\mu}\sigma)
+\end{align*}
+$$
