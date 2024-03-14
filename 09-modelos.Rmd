@@ -36,8 +36,8 @@ $$
 \begin{align*}
 &X =
   \begin{cases}
-    1 & \text{, se cara}\\
-    0 & \text{, se coroa}
+    1 \;\text{, se cara}\\
+    0 \;\text{, se coroa}
   \end{cases}
 \end{align*}
 $$
@@ -63,3 +63,33 @@ $$
 ### Modelo Geométrico
 
 Suponha que vamos realizar uma sequência de ensaios de Bernoulli até acontecer o primeiro sucesso, e seja X a quantidade de fracassos antes do primeiro sucesso. Então X segue uma geométrica de parâmetro $p$, onde $p$ é a probabilidade de sucesso: $X\sim Geo(p)$
+
+Função de Probabilidade: $p(x)=p(1-p)^x$
+
+Exemplo: Em uma fábrica de um item qualquer, a probabilidade de um item apresentar defeito é $\frac{1}{100}$. Qual a probabilidade do centésimo item ser o primeiro a apresentar defeito?
+
+Nesse caso, chamaremos o item com defeito de sucesso. Portanto $X\sim Geo(\frac{1}{100})$
+
+$$
+\begin{align*}
+p(99)=\frac{1}{100}\Big(\frac{99}{100}\Big)^{99} = 
+\end{align*}
+$$
+
+### Modelo de Poisson
+
+Quando queremos análisar a quantidade de ocorrências de um certo evento em uma unidade de medida, usaremos o modelo de Poisson.
+
+Notação: $X\sim Poisson(\lambda)$ onde $\lambda$ é a taxa de ocorrência do evento pela unidade de medida estabelecida
+
+Função de Probabilidade: $p(x)=P(X=x)=\frac{e^{-\lambda}\cdot\lambda^x}{x!}$
+
+Exemplo: Em um pedágio em média passam 50 carros por dia, qual a probabilidade de passar 60 carros em um dia?
+
+$$
+\begin{align*}
+p(60)=\frac{e^{-50}\cdot50^{60}}{60!} = 
+\end{align*}
+$$
+
+## Modelos Contínuos

@@ -2,6 +2,7 @@
 header-includes:
 - \usepackage{pxfonts}
 - \usepackage{amsmath}
+- \usepackage{mathsf}
 ---
 
 # REVISÃO - TEORIA DOS CONJUNTOS

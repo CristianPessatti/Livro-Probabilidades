@@ -2,6 +2,30 @@
 
 Quando realizamos um experimento aleatório existem algumas características numéricas que são registradas.
 
-Por exemplo: número de caras em $n$ lançamentos de uma moeda, tempo de vida de um componente, salário, idade, etc. em um questionário sócio econômico.
+Por exemplo: número de caras em $n$ lançamentos de$\overset{\infty}{\underset{i=1}{\LARGE\sum}}$ uma moeda, tempo de vida de um componente, salário, idade, etc. em um questionário sócio econômico.
 
 Vamos dizer, informalmente, que uma variável aleatória é uma característica numérica de um experimento aleatório
+
+Exemplo: seja $\varepsilon$: lançar uma moeda honesta três vezes e registrar o resultado
+
+$$
+\begin{align*}
+&\Omega=\{\overset{\omega_1}{(c,c,c)},
+         \overset{\omega_2}{(c,c,\overline c)}, 
+         \overset{\omega_3}{(c,\overline c,c)},
+         \overset{\omega_4}{(\overline c,c,c)},
+         \overset{\omega_5}{(\overline c,\overline c,c)},
+         \overset{\omega_6}{(\overline c,c,\overline c)},
+         \overset{\omega_1}{(c,\overline c, \overline c)},
+         \overset{\omega_1}{(\overline c, \overline c,\overline c)}
+\}
+\\
+\\
+&\mathbb{A}=\mathbb{P}(\Omega)
+\\
+\\
+&p(\omega_i)=\frac{1}{8}, i=1,...,8\\
+\end{align*}
+$$
+
+Defina a função $X(\omega_i)$: número de caras em $\omega_i$
