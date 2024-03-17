@@ -13,7 +13,7 @@ Uma proposição é uma sentença declarativa que pode ser classficada com um va
 
 - Príncipio da Não-Contradição:
 
-  Uma proposição não ser falsa e verdadeira ao mesmo tempo.
+  Uma proposição não pode ser falsa e verdadeira ao mesmo tempo.
   
 - Princípio do Terceiro Excluído:
 
@@ -61,6 +61,6 @@ $$\begin{align*}
 \end{align*}$$
 
 
-as equivalências ii) e iii) tem um paralelo direto com teoria dos conjuntos e as leis de de De morgan.
+as equivalências ii) e iii) tem um paralelo direto com teoria dos conjuntos e as leis de De morgan.
 
 EM PROGRESSO
