@@ -7,16 +7,60 @@ output:
 
 ## Noções de lógica
 
+### Proposição
+
 Uma proposição é uma sentença declarativa que pode ser classficada com um valor lógico de V ou F, seguindo os seguintes princípios:
 
 - Príncipio da Não-Contradição:
 
-  Uma proposição não ser falsa e verdadeira oa mesmo tempo.
+  Uma proposição não ser falsa e verdadeira ao mesmo tempo.
   
 - Princípio do Terceiro Excluído:
 
   Uma proposição só pode assumir o valor (V) de verdadeiro ou o valor (F) de falso, não havendo a possibilidade de assumir valores diferentes
 
+### Linguagem
+
+Chamamos de alfabeto de uma linguagem o conjunto de símbolos que a compôem. O alfabeto da lógica proposicional é constituída pelos seguintes símbolos:
+
+ - Proposições são representadas por letras maiúsculas: (A, B, ...)
+ - O símbolo de negação é representado por $\neg$
+ - Conectivos lógicos são representados por $\land$, $\lor$, $\implies$, e $\iff$, significando, respectivamente, "e", "ou", "implica", "equivale".
+ 
+Expressamos a seguinte proposição "se chove, então a calçada molha." usando os símbolos lógicos:
+
+$$P \implies Q$$
+onde P = "chove" e Q = "calçada molha".
+
+Os conectivos obedecem as regras do cálculo proposicional:
+
+$$\begin{array}{|c c|c|c|c|c|}
+p & q & p \land q & p \lor q & p \implies q & p \iff q\\
+\hline
+V & V & V & V & V & V\\
+V & F & F & V & F & F\\
+F & V & F & V & V & F\\
+F & F & F & F & V & V\\
+\end{array}$$
+
+No exemplo dado acima, a proposição acima só é falsa quando P é verdadeira, e Q é falsa, ou seja, choveu e a calçada não está molhada.
+
+Ex.: "Otávio é bombeiro e advogado"
+
+Sendo P = "Ótavio é bombeiro" e Q = "Otávio é advogado", a proposição
+$$P \land Q$$
+só será verdadeira apenas se Otávio for bombeiro e também advogado.
+
+### Equivalências
+
+$$\begin{align*}
+& i)\ \neg \neg A\ = A\\
+& ii)\ \neg(P \land Q) = (\neg P \lor \neg Q)\\
+& iii)\ \neg(P \lor Q) = (\neg P \land \neg Q)\\
+& iv)\ (P \implies Q) = (\neg P \lor Q)
+\end{align*}$$
+
+
+as equivalências ii) e iii) tem um paralelo direto com teoria dos conjuntos e as leis de de De morgan.
+
 EM PROGRESSO
-
-
