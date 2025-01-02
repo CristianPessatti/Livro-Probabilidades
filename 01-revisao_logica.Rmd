@@ -1,36 +1,46 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-# REVISÃO - OPERADORES LÓGICOS
+# REVISÃO - NOÇÕES DE LÓGICA
 
-## Noções de lógica
+## Proposição
 
-### Proposição
+Uma proposição é uma sentença declarativa que pode ser classificada como verdadeira ou falsa (V ou F). Exemplos de proposições:
 
-Uma proposição é uma sentença declarativa que pode ser classficada com um valor lógico de V ou F, seguindo os seguintes princípios:
+-   "2 é um número par." (V)
+-   "Dia 25 de dezembro é feriado." (V)
+-   "A Terra é plana." (F)
+-   "O Brasil é uma cidade." (F)
 
-- Príncipio da Não-Contradição:
+Uma proposição deve seguir os seguintes princípios:
 
-  Uma proposição não pode ser falsa e verdadeira ao mesmo tempo.
-  
-- Princípio do Terceiro Excluído:
+-   Príncipio da Não-Contradição:
 
-  Uma proposição só pode assumir o valor (V) de verdadeiro ou o valor (F) de falso, não havendo a possibilidade de assumir valores diferentes
+    Uma proposição não pode ser falsa e verdadeira ao mesmo tempo.
 
-### Linguagem
+-   Princípio do Terceiro Excluído:
+
+    Uma proposição só pode assumir o valor (V) de verdadeiro ou o valor (F) de falso, não havendo a possibilidade de assumir valores diferentes
+
+## Linguagem
 
 Chamamos de alfabeto de uma linguagem o conjunto de símbolos que a compôem. O alfabeto da lógica proposicional é constituída pelos seguintes símbolos:
 
- - Proposições são representadas por letras maiúsculas: (A, B, ...)
- - O símbolo de negação é representado por $\neg$
- - Conectivos lógicos são representados por $\land$, $\lor$, $\implies$, e $\iff$, significando, respectivamente, "e", "ou", "implica", "equivale".
- 
-Expressamos a seguinte proposição "se chove, então a calçada molha." usando os símbolos lógicos:
+-   Proposições são representadas por letras maiúsculas: (A, B, ...)
 
-$$P \implies Q$$
-onde P = "chove" e Q = "calçada molha".
+-   O símbolo de negação é representado por $\neg$
+
+-   Conectivos lógicos são representados por $\land$, $\lor$, $\implies$, e $\iff$, significando, respectivamente:
+
+    -   $\land$ - E (conjunção)
+    -   $\lor$ - OU (disjunção)
+    -   $\implies$ - SE...ENTÃO (implicação)
+    -   $\iff$ - SE E SOMENTE SE (bicondicional)
+
+-   Exemplo: Seja A = "Hoje é segunda-feira" e B = "Hoje é feriado".
+
+    -   $\neg A$ - Hoje não é segunda-feira;
+    -   $A \land B$ - Hoje é segunda-feira e é feriado;
+    -   $A \lor B$ - Hoje é segunda-feira ou é feriado;
+    -   $A \implies B$ - Se hoje é segunda-feira, então é feriado;
+    -   $A \iff B$ - Hoje é segunda-feira se e somente se é feriado.
 
 Os conectivos obedecem as regras do cálculo proposicional:
 
@@ -43,24 +53,32 @@ F & V & F & V & V & F\\
 F & F & F & F & V & V\\
 \end{array}$$
 
-No exemplo dado acima, a proposição acima só é falsa quando P é verdadeira, e Q é falsa, ou seja, choveu e a calçada não está molhada.
+-   Exemplo: A = "Otávio é bombeiro" e B = "Otávio é advogado".
 
-Ex.: "Otávio é bombeiro e advogado"
+    -   $A \land B$ - "Otávio é bombeiro e advogado". Essa proposição só será verdadeira se Otávio for bombeiro e advogado ao mesmo tempo;
+    -   $A \lor B$ - "Otávio é bombeiro ou advogado". Essa proposição será verdadeira se Otávio for bombeiro, advogado ou ambos;
+    -   $A \implies B$ - "Se Otávio é bombeiro, então é advogado". Essa proposição será verdadeira se Otávio for bombeiro e advogado ao mesmo tempo, ou se Otávio não for bombeiro;
+    -   $A \iff B$ - "Otávio é bombeiro se e somente se é advogado". Essa proposição será verdadeira se Otávio for bombeiro e advogado ao mesmo tempo, ou se Otávio não for bombeiro e nem advogado.
 
-Sendo P = "Ótavio é bombeiro" e Q = "Otávio é advogado", a proposição
-$$P \land Q$$
-só será verdadeira apenas se Otávio for bombeiro e também advogado.
+## Equivalências
 
-### Equivalências
+-   $\neg \neg A\ = A$
+-   $\neg(P \land Q) = (\neg P \lor \neg Q)$
+-   $\neg(P \lor Q) = (\neg P \land \neg Q)$
+-   $P \implies Q = (\neg P \lor Q)$
 
-$$\begin{align*}
-& i)\ \neg \neg A\ = A\\
-& ii)\ \neg(P \land Q) = (\neg P \lor \neg Q)\\
-& iii)\ \neg(P \lor Q) = (\neg P \land \neg Q)\\
-& iv)\ (P \implies Q) = (\neg P \lor Q)
-\end{align*}$$
+-   Exemplo: Seja A = "Hoje é segunda-feira" e B = "Hoje é feriado".
 
+    -   $\neg \neg A$ - Hoje é segunda-feira;
+    -   $\neg(A \land B)$ - Hoje não é segunda-feira ou não é feriado;
+    -   $\neg(A \lor B)$ - Hoje não é segunda-feira e não é feriado;
+    -   $A \implies B$ - Hoje não é segunda-feira ou é feriado.
+    
+## Tautologias e Contradições
 
-as equivalências ii) e iii) tem um paralelo direto com teoria dos conjuntos e as leis de De morgan.
+Uma tautologia é uma proposição composta que é sempre verdadeira, independente dos valores das proposições simples que a compõem. Uma contradição é uma proposição composta que é sempre falsa, independente dos valores das proposições simples que a compõem.
 
-EM PROGRESSO
+-   Exemplo: Seja A = "Hoje é segunda-feira".
+
+    -   $(A \lor \neg A)$ - Hoje é segunda-feira ou não é segunda-feira. Essa proposição é uma tautologia, pois sempre será verdadeira;
+    -   $(A \land \neg A)$ - Hoje é segunda-feira e não é segunda-feira. Essa proposição é uma contradição, pois sempre será falsa.

@@ -1,7 +1,7 @@
 --- 
 title: "Teoria da Probabilidade"
 author: "Bruno Wavrzenczak - Cristian Pessatti dos Anjos - Caio Gomes Alves - Anderson Amorim"
-date: "`r Sys.Date()`"
+date: "Última atualização: `r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::html_book
 documentclass: book
@@ -9,9 +9,11 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "A porra toda de prob 1 e 2"
+description: "Todo o conteúdo de Teoria da Probabilidade 1."
 ---
 
 # INTRODUÇÃO
 
-prob prob prob
+Esta apostila apresenta um guia abrangente e acessível para estudantes que desejam compreender e aplicar os princípios fundamentais da probabilidade. Este material foi desenvolvido como parte das iniciativas do PET Estatística, time de ensino, e tem como objetivo principal auxiliar na disciplina de Teoria de Probabilidade.
+
+Ao longo dos capítulos, exploramos conceitos essenciais, desde revisões de lógica e conjuntos até técnicas mais avançadas, como funções geradoras de momentos e modelos probabilísticos. A fundamentação teórica foi construída com base no livro "Probabilidade e Variáveis Aleatórias" de Dr. Marcos Magalhães Nascimento e nas notas de aula elaboradas durante as aulas ministradas pelo professor Me. Benito Orlando Olivares Aguilera.
